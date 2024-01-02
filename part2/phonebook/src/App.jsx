@@ -102,8 +102,6 @@ const App = () => {
 
   }
 
-  // Stoped at https://fullstackopen.com/en/part2/forms
-
   return (
     <div>
       <h2>Phonebook</h2>
