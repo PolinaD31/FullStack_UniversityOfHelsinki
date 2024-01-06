@@ -1,1 +1,2 @@
-Link to the deployed version: https://phonebook-r2ur.onrender.com/api/persons
+## Deployment
+Link to the deployed version of the application: https://phonebook-r2ur.onrender.com
