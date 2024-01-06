@@ -53,7 +53,12 @@ const App = () => {
 
         numbersService.update(person.id, changedNumber)
         .then(returnedPerson => setPersons(persons.map(p => p.id !== person.id ? p : returnedPerson)))
-        .catch(error => console.log(error))
+        .catch(error => {
+          console.log(error.response.data.error)
+          setMessageType('error')
+          setMessage(error.response.data.error)
+          messageTimeout()
+        })
 
         setMessageType('notification')
         setMessage(
@@ -81,7 +86,12 @@ const App = () => {
         setNewName('')
         setNewNumber('')
       })
-      .catch(error => console.log(error))
+      .catch(error => {
+        console.log(error.response.data.error)
+        setMessageType('error')
+        setMessage(error.response.data.error)
+        messageTimeout()
+      })
     }
   }
 
