@@ -100,7 +100,14 @@ const App = () => {
 
     if (isConfirmed) {
       numbersService.deletePerson(person.id)
-      .then(() => setPersons(persons.filter(onePerson => onePerson.id !== person.id)))
+      .then(() => {
+        setPersons(persons.filter(onePerson => onePerson.id !== person.id))
+        setMessageType('notification')
+        setMessage(
+          `Deleted ${person.name}`
+        )
+        messageTimeout()
+      })
       .catch(error => {
         setMessageType('error')
         setMessage(
